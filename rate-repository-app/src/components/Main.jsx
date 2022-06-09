@@ -3,6 +3,8 @@ import { Text, StyleSheet, View, Pressable } from 'react-native';
 import theme from '../theme';
 import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
+import { Route, Routes, Navigate } from 'react-router-native';
+
 
 const styles = StyleSheet.create({
     container: {

@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: Constants.statusBarHeight,
         backgroundColor: theme.colors.navBarBackground,
-        paddingBottom: 15,
+        paddingBottom: 20,
     },
     appBarText: {
         color: theme.colors.white,
