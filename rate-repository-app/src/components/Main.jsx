@@ -1,10 +1,9 @@
-import Constants from 'expo-constants';
-import { Text, StyleSheet, View, Pressable } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import theme from '../theme';
 import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
-import { Route, Routes, Navigate } from 'react-router-native';
-import SignIn from './SignIn';
+import { Route, Routes, } from 'react-router-native';
+import SignIn from './SignIn/SignIn';
 
 const styles = StyleSheet.create({
     container: {
