@@ -5,7 +5,7 @@ import InfoComponent from "./InfoComponent";
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: theme.colors.white,
+        backgroundColor: "white",
     },
     headerContainer: {
         flexDirection: 'row',
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         marginLeft: 6,
     },
     languageTag: {
-        color: theme.colors.white,
+        color: "white",
         backgroundColor: theme.colors.primary,
         borderRadius: 7,
         marginTop: 10,

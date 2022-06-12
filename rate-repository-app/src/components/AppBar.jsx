@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         backgroundColor: theme.colors.navBarBackground,
     },
     appBarText: {
-        color: theme.colors.white,
+        color: "white",
         fontWeight: theme.fontWeights.bold,
         fontSize: theme.fontSizes.bold,
         marginLeft: 20,
