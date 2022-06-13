@@ -10,6 +10,9 @@ const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
     },
+    headerTextContainer: {
+        flex: 1,
+    },
     infoContainer: {
         flexDirection: "row",
         justifyContent: "space-around",
@@ -43,7 +46,6 @@ const styles = StyleSheet.create({
         paddingRight: 5,
         alignSelf: "flex-start",
     },
-
 })
 
 const RepositoryItem = ({ fullName, description, language, forksCount, stars, ratingAverage, reviewCount, avatar }) => {
@@ -52,7 +54,7 @@ const RepositoryItem = ({ fullName, description, language, forksCount, stars, ra
             <View style={styles.container}>
                 <View style={styles.headerContainer}>
                     <Image source={{ uri: avatar }} style={styles.avatar}></Image>
-                    <View>
+                    <View style={styles.headerTextContainer}>
                         <Text style={styles.fullName}>{fullName}</Text>
                         <Text style={styles.description}>{description}</Text>
                         <Text style={styles.languageTag}>{language}</Text>

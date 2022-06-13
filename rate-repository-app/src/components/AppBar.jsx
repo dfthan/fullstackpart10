@@ -1,4 +1,4 @@
-import { View, StyleSheet, Pressable, ScrollView, } from 'react-native';
+import { View, StyleSheet, ScrollView, } from 'react-native';
 import Constants from 'expo-constants';
 import Text from './Text';
 import theme from '../theme';
@@ -6,9 +6,8 @@ import { Link } from 'react-router-native';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        maxHeight: 90,
         paddingTop: Constants.statusBarHeight,
+        paddingBottom: "5%",
         backgroundColor: theme.colors.navBarBackground,
     },
     appBarText: {
