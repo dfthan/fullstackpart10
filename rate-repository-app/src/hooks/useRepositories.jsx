@@ -7,9 +7,10 @@ const useRepositories = () => {
         fetchPolicy: "cache-and-network",
     });
 
+    // returns null if backend offline
     return {
         loading,
-        repositories: data.repositories,
+        repositories: data ? data.repositories : null,
     }
 };
 
