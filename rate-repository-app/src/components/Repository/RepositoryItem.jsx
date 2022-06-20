@@ -61,10 +61,10 @@ const RepositoryItem = ({ fullName, description, language, forksCount, stars, ra
                     </View>
                 </View>
                 <View style={styles.infoContainer}>
-                    <InfoComponent role="stars" infoNumber={stars} infoText="Stars" />
-                    <InfoComponent testID="forks" infoNumber={forksCount} infoText="Forks" />
-                    <InfoComponent testID="review" infoNumber={reviewCount} infoText="Reviews" />
-                    <InfoComponent testID="rating" infoNumber={ratingAverage} infoText="Rating" />
+                    <InfoComponent infoNumber={stars} infoText="Stars" />
+                    <InfoComponent infoNumber={forksCount} infoText="Forks" />
+                    <InfoComponent infoNumber={reviewCount} infoText="Reviews" />
+                    <InfoComponent infoNumber={ratingAverage} infoText="Rating" />
                 </View>
             </View>
         </>

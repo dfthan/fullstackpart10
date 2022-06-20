@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react-native";
-import { formatNumber } from "./InfoComponent";
 import { RepositoryListContainer } from "./RepositoryListContainer";
+import { formatNumber } from "../InfoComponent";
 
 describe('RepositoryList', () => {
     describe('RepositoryListContainer', () => {
@@ -49,7 +49,6 @@ describe('RepositoryList', () => {
             };
 
             const { getAllByTestId } = render(<RepositoryListContainer repositories={repositories} />);
-
             let firstObj = repositories.edges[0].node;
             let secondObj = repositories.edges[1].node;
 

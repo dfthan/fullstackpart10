@@ -1,5 +1,5 @@
 import { FlatList } from "react-native";
-import RepositoryItem from "./RepositoryItem";
+import RepositoryItem from "../RepositoryItem";
 
 const render = ({ item }) => (
     <RepositoryItem
