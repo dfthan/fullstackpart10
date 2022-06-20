@@ -1,7 +1,11 @@
-import { StyleSheet, View, Image, } from "react-native";
+import { StyleSheet, View, Image, Pressable, } from "react-native";
+import { useNavigate, } from 'react-router-native';
 import theme from "../../theme";
 import Text from "../Text";
 import InfoComponent from "./InfoComponent";
+import SingleRepository from "./SingleRepository";
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -48,25 +52,30 @@ const styles = StyleSheet.create({
     },
 })
 
-const RepositoryItem = ({ fullName, description, language, forksCount, stars, ratingAverage, reviewCount, avatar }) => {
+
+const RepositoryItem = ({ id, fullName, description, language, forksCount, stars, ratingAverage, reviewCount, avatar }) => {
+    const navigate = useNavigate();
+
     return (
         <>
-            <View style={styles.container}>
-                <View style={styles.headerContainer}>
-                    <Image source={{ uri: avatar }} style={styles.avatar}></Image>
-                    <View style={styles.headerTextContainer}>
-                        <Text testID="fullName" style={styles.fullName}>{fullName}</Text>
-                        <Text testID="description" style={styles.description}>{description}</Text>
-                        <Text testID="language" style={styles.languageTag}>{language}</Text>
+            <Pressable onPress={() => navigate(`/${id}`)}>
+                <View style={styles.container}>
+                    <View style={styles.headerContainer}>
+                        <Image source={{ uri: avatar }} style={styles.avatar}></Image>
+                        <View style={styles.headerTextContainer}>
+                            <Text testID="fullName" style={styles.fullName}>{fullName}</Text>
+                            <Text testID="description" style={styles.description}>{description}</Text>
+                            <Text testID="language" style={styles.languageTag}>{language}</Text>
+                        </View>
+                    </View>
+                    <View style={styles.infoContainer}>
+                        <InfoComponent infoNumber={stars} infoText="Stars" />
+                        <InfoComponent infoNumber={forksCount} infoText="Forks" />
+                        <InfoComponent infoNumber={reviewCount} infoText="Reviews" />
+                        <InfoComponent infoNumber={ratingAverage} infoText="Rating" />
                     </View>
                 </View>
-                <View style={styles.infoContainer}>
-                    <InfoComponent infoNumber={stars} infoText="Stars" />
-                    <InfoComponent infoNumber={forksCount} infoText="Forks" />
-                    <InfoComponent infoNumber={reviewCount} infoText="Reviews" />
-                    <InfoComponent infoNumber={ratingAverage} infoText="Rating" />
-                </View>
-            </View>
+            </Pressable>
         </>
     );
 };

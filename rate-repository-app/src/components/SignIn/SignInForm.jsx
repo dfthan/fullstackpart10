@@ -2,6 +2,7 @@ import { StyleSheet, View, Pressable } from "react-native"
 import Text from "../Text"
 import theme from "../../theme"
 import FormikTextInput from "../FormikTextInput"
+import Button from "../Button";
 
 
 const styles = StyleSheet.create({
@@ -12,18 +13,6 @@ const styles = StyleSheet.create({
     formContainer: {
         width: "80%",
     },
-    formButton: {
-        marginTop: 20,
-        backgroundColor: theme.colors.primary,
-        borderRadius: 5,
-        width: "80%",
-        height: "17%",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    buttonText: {
-        color: "white"
-    }
 });
 
 const SignInForm = ({ onSubmit }) => {
@@ -36,9 +25,9 @@ const SignInForm = ({ onSubmit }) => {
                 <View style={styles.formContainer}>
                     <FormikTextInput name="password" placeholder="Password" secureTextEntry />
                 </View>
-                <Pressable style={styles.formButton} onPress={onSubmit}>
-                    <Text style={styles.buttonText}>Sign in</Text>
-                </Pressable>
+                <View >
+                    <Button text="Sign in" onSubmit={onSubmit} />
+                </View>
             </View>
         </>
     );

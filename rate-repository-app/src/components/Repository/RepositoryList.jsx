@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
 
 const render = ({ item }) => (
     <RepositoryItem
+        id={item.id}
         fullName={item.fullName}
         description={item.description}
         language={item.language}
