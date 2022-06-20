@@ -1,6 +1,6 @@
 import { StyleSheet, View, Image, } from "react-native";
-import theme from "../theme";
-import Text from "./Text";
+import theme from "../../theme";
+import Text from "../Text";
 import InfoComponent from "./InfoComponent";
 
 const styles = StyleSheet.create({
@@ -55,16 +55,16 @@ const RepositoryItem = ({ fullName, description, language, forksCount, stars, ra
                 <View style={styles.headerContainer}>
                     <Image source={{ uri: avatar }} style={styles.avatar}></Image>
                     <View style={styles.headerTextContainer}>
-                        <Text style={styles.fullName}>{fullName}</Text>
-                        <Text style={styles.description}>{description}</Text>
-                        <Text style={styles.languageTag}>{language}</Text>
+                        <Text testID="fullName" style={styles.fullName}>{fullName}</Text>
+                        <Text testID="description" style={styles.description}>{description}</Text>
+                        <Text testID="language" style={styles.languageTag}>{language}</Text>
                     </View>
                 </View>
                 <View style={styles.infoContainer}>
-                    <InfoComponent infoNumber={stars} infoText="Stars" />
-                    <InfoComponent infoNumber={forksCount} infoText="Forks" />
-                    <InfoComponent infoNumber={reviewCount} infoText="Reviews" />
-                    <InfoComponent infoNumber={ratingAverage} infoText="Rating" />
+                    <InfoComponent role="stars" infoNumber={stars} infoText="Stars" />
+                    <InfoComponent testID="forks" infoNumber={forksCount} infoText="Forks" />
+                    <InfoComponent testID="review" infoNumber={reviewCount} infoText="Reviews" />
+                    <InfoComponent testID="rating" infoNumber={ratingAverage} infoText="Rating" />
                 </View>
             </View>
         </>

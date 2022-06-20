@@ -26,8 +26,11 @@ const styles = StyleSheet.create({
 const AppBar = () => {
     const authStorage = useAuthStorage();
     const apolloClient = useApolloClient();
-    const { data } = useQuery(GET_ME);
-    const userLogged = data.me ? true : false
+    const { data, loading } = useQuery(GET_ME);
+    let userLogged = false;
+    if (!loading) {
+        userLogged = data.me ? true : false;
+    };
 
     const signOut = async () => {
         await authStorage.removeAccessToken();
@@ -53,6 +56,7 @@ const AppBar = () => {
             </View>
         );
     }
+
     return (
         <View style={styles.container} >
             <ScrollView horizontal={true} >

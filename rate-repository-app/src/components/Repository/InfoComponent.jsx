@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text } from "react-native";
-import theme from "../theme";
+import theme from "../../theme";
 
-const formatNumber = (value) => {
+export const formatNumber = (value) => {
     if (value > 1000) {
         return `${(value / 1000).toFixed(1)}k`
     }
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 const InfoComponent = ({ infoNumber, infoText }) => {
     return (
         <View style={styles.infoInsideContainer}>
-            <Text style={styles.infoNumber}>
+            <Text testID={infoText} style={styles.infoNumber}>
                 {formatNumber(infoNumber)}
             </Text>
             <Text style={styles.infoText}>
