@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
         color: theme.colors.textPrimary,
         fontWeight: theme.fontWeights.bold,
         marginBottom: 3,
+        marginTop: 10,
     },
     dateText: {
         color: theme.colors.textSecondary,
@@ -43,7 +44,8 @@ const styles = StyleSheet.create({
         flexShrink: 1
     },
     textContainer: {
-        width: "90%"
+        width: "90%",
+        marginBottom: 10,
     }
 })
 

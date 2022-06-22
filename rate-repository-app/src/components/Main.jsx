@@ -6,6 +6,7 @@ import { Route, Routes, } from 'react-router-native';
 import SignIn from './SignIn/SignIn';
 import SingleRepository from './Repository/SingleRepository';
 import ReviewPage from './Reviews/ReviewPage';
+import SignUp from './SignUp/SignUp';
 
 const styles = StyleSheet.create({
     container: {
@@ -22,6 +23,7 @@ const Main = () => {
                 <Routes>
                     <Route path="/" element={<RepositoryList />} />
                     <Route path="/signin" element={<SignIn />} />
+                    <Route path="/signup" element={<SignUp />} />
                     <Route path="/createReview" element={< ReviewPage />} />
                     <Route path=":id" element={<SingleRepository />} />
                 </Routes>

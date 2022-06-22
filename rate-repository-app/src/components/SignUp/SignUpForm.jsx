@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const SignInForm = ({ onSubmit }) => {
+const SignUpForm = ({ onSubmit }) => {
     return (
         <>
             <View style={styles.outerFormContainer}>
@@ -22,10 +22,13 @@ const SignInForm = ({ onSubmit }) => {
                 <View style={styles.formContainer}>
                     <FormikTextInput name="password" placeholder="Password" secureTextEntry />
                 </View>
+                <View style={styles.formContainer}>
+                    <FormikTextInput name="password2" placeholder="Password confirmation" secureTextEntry />
+                </View>
                 <Button text="Sign in" onSubmit={onSubmit} />
             </View>
         </>
     );
 };
 
-export default SignInForm;
+export default SignUpForm;

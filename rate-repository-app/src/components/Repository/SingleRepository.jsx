@@ -100,7 +100,7 @@ const SingleRepository = () => {
                 ItemSeparatorComponent={ItemSeparator}
                 data={reviews}
                 renderItem={({ item }) => <ReviewItem review={item} />}
-                keyExtractor={({ id }) => id}
+                keyExtractor={({ node: { id } }) => id}
                 ListHeaderComponent={() => <RepositoryInfo repository={repository} />}
             />
         </>

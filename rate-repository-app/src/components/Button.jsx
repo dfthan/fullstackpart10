@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     formButton: {
         backgroundColor: theme.colors.primary,
         borderRadius: 5,
-        width: "90%",
+        minWidth: "80%",
         height: 40,
         alignItems: "center",
         justifyContent: "center"

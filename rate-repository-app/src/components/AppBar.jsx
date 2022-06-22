@@ -77,6 +77,11 @@ const AppBar = () => {
                         Sign in
                     </Text>
                 </Link>
+                <Link to={"/signup"}>
+                    <Text style={styles.appBarText}>
+                        Sign up
+                    </Text>
+                </Link>
             </ScrollView>
         </View>
     );

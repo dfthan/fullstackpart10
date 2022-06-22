@@ -32,6 +32,7 @@ export const GET_ME = gql`
 export const GET_SINGLE_REPOSITORY = gql`
     query Query($repositoryId: ID!) {
   repository(id: $repositoryId) {
+    id
     fullName
     url
     description
