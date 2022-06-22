@@ -1,6 +1,8 @@
 import { FlatList, View, StyleSheet } from 'react-native';
 import useRepositories from '../../hooks/useRepositories';
+import SortingList from '../SortingList';
 import RepositoryItem from "./RepositoryItem"
+import { useState } from 'react';
 
 const styles = StyleSheet.create({
     separator: {
@@ -25,7 +27,8 @@ const render = ({ item }) => (
 const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
-    const { repositories } = useRepositories();
+    const [filter, setFilter] = useState(["CREATED_AT", "DESC"]);
+    const { repositories } = useRepositories(filter);
 
     const repositoryNodes = repositories
         ? repositories.edges.map(edge => edge.node)
@@ -34,6 +37,8 @@ const RepositoryList = () => {
     return (
 
         <FlatList
+            ListHeaderComponent={<SortingList setFilter={setFilter} />}
+            ListHeaderComponentStyle={{ elevation: 100, zIndex: 100 }}
             data={repositoryNodes}
             renderItem={render}
             ItemSeparatorComponent={ItemSeparator}

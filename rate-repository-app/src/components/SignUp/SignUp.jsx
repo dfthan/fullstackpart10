@@ -30,9 +30,7 @@ const SignUp = () => {
 
         try {
             await createAccount({ variables: { user: { username, password } } })
-            if (data) {
-                console.log(data)
-            }
+            navigate("/")
         }
         catch {
             console.log(error);
