@@ -3,9 +3,6 @@ import { useNavigate, } from 'react-router-native';
 import theme from "../../theme";
 import Text from "../Text";
 import InfoComponent from "./InfoComponent";
-import SingleRepository from "./SingleRepository";
-
-
 
 const styles = StyleSheet.create({
     container: {

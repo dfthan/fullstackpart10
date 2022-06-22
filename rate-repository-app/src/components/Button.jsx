@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         backgroundColor: theme.colors.primary,
         borderRadius: 5,
         width: "90%",
-        height: "80%",
+        height: 40,
         alignItems: "center",
         justifyContent: "center"
     },
@@ -15,11 +15,11 @@ const styles = StyleSheet.create({
         color: "white"
     },
     container: {
-        marginTop: 20,
-        height: "35%",
+        marginTop: 10,
         minWidth: "80%",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        marginBottom: 10
     }
 
 })
