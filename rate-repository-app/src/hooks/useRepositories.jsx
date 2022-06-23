@@ -1,17 +1,32 @@
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '../graphql/queries';
+import { useDebounce } from "use-debounce";
 
-const useRepositories = (filter) => {
-    const order = filter[0];
-    const direction = filter[1];
-    const { loading, data } = useQuery(GET_REPOSITORIES, {
+const useRepositories = ({ variables }) => {
+    const { loading, data, fetchMore, ...result } = useQuery(GET_REPOSITORIES, {
         fetchPolicy: "cache-and-network",
-        variables: { orderBy: order, orderDirection: direction }
+        variables
     });
+    const handleFetchMore = () => {
+        const canFetchMore = !loading && data?.repositories.pageInfo.hasNextPage;
+
+        if (!canFetchMore) {
+            return;
+        }
+
+        fetchMore({
+            variables: {
+                after: data.repositories.pageInfo.endCursor,
+                ...variables,
+            },
+        });
+    };
 
     return {
         loading,
         repositories: data ? data.repositories : undefined,
+        fetchMore: handleFetchMore,
+        ...result,
     }
 };
 

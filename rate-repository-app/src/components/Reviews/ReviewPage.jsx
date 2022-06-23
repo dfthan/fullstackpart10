@@ -31,13 +31,14 @@ const ReviewPage = () => {
         const { ownerName, repositoryName, rating, text } = values;
         try {
             await createReview({ variables: { review: { ownerName, repositoryName, rating: Number(rating), text } } });
-            if (data) {
-                navigate(`/${data.createReview.repositoryId}`);
-            };
         }
         catch {
             console.log(error);
         };
+        if (data) {
+            navigate(`/${data.createReview.repositoryId}`);
+        };
+
     };
     return (
         <>
